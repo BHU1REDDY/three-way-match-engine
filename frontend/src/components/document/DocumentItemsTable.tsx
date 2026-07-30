@@ -1,5 +1,7 @@
 'use client';
 
+import { Badge } from '@/components/ui/Badge';
+
 interface Row {
   itemCode: string;
   description: string;
@@ -9,48 +11,53 @@ interface Row {
   unmappedReason: string | null;
 }
 
+function fmtMoney(n: number | null | undefined) {
+  if (n == null) return '—';
+  return n.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+
 export function DocumentItemsTable({ rows, qtyLabel }: { rows: Row[]; qtyLabel: string }) {
   return (
-    <div className="overflow-x-auto rounded-lg border border-gray-200 bg-white shadow-sm">
-      <table className="min-w-full divide-y divide-gray-100 text-sm">
-        <thead className="bg-gray-50 text-xs uppercase tracking-wide text-gray-500">
-          <tr>
-            <th className="px-3 py-2 text-left">Item Code</th>
-            <th className="px-3 py-2 text-left">Description</th>
-            <th className="px-3 py-2 text-right">{qtyLabel}</th>
-            <th className="px-3 py-2 text-right">Rate</th>
-            <th className="px-3 py-2 text-right">MRP</th>
-            <th className="px-3 py-2 text-left">Mapping</th>
-          </tr>
-        </thead>
-        <tbody className="divide-y divide-gray-50">
-          {rows.map((row, idx) => (
-            <tr key={idx} className={row.unmappedReason ? 'bg-amber-50/60' : ''}>
-              <td className="px-3 py-2 font-mono text-xs">{row.itemCode}</td>
-              <td className="px-3 py-2">{row.description || '—'}</td>
-              <td className="px-3 py-2 text-right">{row.qty}</td>
-              <td className="px-3 py-2 text-right">{row.rate != null ? row.rate.toFixed(2) : '—'}</td>
-              <td className="px-3 py-2 text-right">{row.mrp != null ? row.mrp.toFixed(2) : '—'}</td>
-              <td className="px-3 py-2">
-                {row.unmappedReason ? (
-                  <span className="rounded bg-amber-100 px-1.5 py-0.5 text-xs font-medium text-amber-700">
-                    Unmapped
-                  </span>
-                ) : (
-                  <span className="text-xs text-green-600">Mapped</span>
-                )}
-              </td>
-            </tr>
-          ))}
-          {rows.length === 0 && (
+    <div className="overflow-hidden rounded-xl border border-gray-200 bg-white shadow-sm">
+      <div className="themed-scroll max-h-[520px] overflow-auto">
+        <table className="min-w-full border-collapse text-sm">
+          <thead className="sticky top-0 z-10 bg-gray-50/95 text-xs font-semibold uppercase tracking-wide text-gray-500 backdrop-blur">
             <tr>
-              <td colSpan={6} className="px-3 py-6 text-center text-gray-400">
-                No items.
-              </td>
+              <th className="whitespace-nowrap px-4 py-2.5 text-left">Item Code</th>
+              <th className="whitespace-nowrap px-4 py-2.5 text-left">Description</th>
+              <th className="whitespace-nowrap px-4 py-2.5 text-right">{qtyLabel}</th>
+              <th className="whitespace-nowrap px-4 py-2.5 text-right">Rate</th>
+              <th className="whitespace-nowrap px-4 py-2.5 text-right">MRP</th>
+              <th className="whitespace-nowrap px-4 py-2.5 text-left">Mapping</th>
             </tr>
-          )}
-        </tbody>
-      </table>
+          </thead>
+          <tbody className="divide-y divide-gray-50">
+            {rows.map((row, idx) => (
+              <tr key={idx} className={`transition-colors ${row.unmappedReason ? 'bg-amber-50/50' : 'hover:bg-gray-50/70'}`}>
+                <td className="px-4 py-3 font-mono text-xs text-gray-500">{row.itemCode}</td>
+                <td className="max-w-[280px] truncate px-4 py-3 text-gray-800">{row.description || '—'}</td>
+                <td className="px-4 py-3 text-right tabular-nums text-gray-700">{row.qty}</td>
+                <td className="px-4 py-3 text-right tabular-nums text-gray-700">{fmtMoney(row.rate)}</td>
+                <td className="px-4 py-3 text-right tabular-nums text-gray-700">{fmtMoney(row.mrp)}</td>
+                <td className="px-4 py-3">
+                  {row.unmappedReason ? (
+                    <Badge tone="amber">Unmapped</Badge>
+                  ) : (
+                    <Badge tone="green">Mapped</Badge>
+                  )}
+                </td>
+              </tr>
+            ))}
+            {rows.length === 0 && (
+              <tr>
+                <td colSpan={6} className="px-4 py-10 text-center text-sm text-gray-400">
+                  No items.
+                </td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

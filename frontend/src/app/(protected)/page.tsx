@@ -5,6 +5,8 @@ import { useRouter } from 'next/navigation';
 import { useDocuments } from '@/lib/queries';
 import { UploadModal } from '@/components/upload/UploadModal';
 import { Button } from '@/components/ui/Button';
+import { Skeleton } from '@/components/ui/Skeleton';
+import { EmptyState } from '@/components/ui/EmptyState';
 import type { PurchaseOrderDoc } from '@/types/api';
 
 function PlusIcon() {
@@ -45,22 +47,24 @@ export default function HomePage() {
       </div>
 
       {isLoading && (
-        <div className="flex items-center justify-center py-16 text-sm text-gray-400">Loading…</div>
+        <div className="grid gap-3">
+          <Skeleton className="h-[68px] rounded-xl" />
+          <Skeleton className="h-[68px] rounded-xl" />
+          <Skeleton className="h-[68px] rounded-xl" />
+        </div>
       )}
 
       {!isLoading && uniqueByPoNumber.length === 0 && (
-        <div className="flex flex-col items-center rounded-2xl border border-dashed border-gray-300 bg-white/60 px-8 py-14 text-center">
-          <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-indigo-50 text-indigo-500">
-            <InboxIcon />
-          </div>
-          <p className="text-sm font-medium text-gray-700">No documents yet</p>
-          <p className="mt-1 max-w-sm text-sm text-gray-400">
-            Upload a PO, GRN, or Invoice to get started - upload order doesn&apos;t matter.
-          </p>
-          <Button icon={<PlusIcon />} onClick={() => setUploadOpen(true)} className="mt-5">
-            Upload Document
-          </Button>
-        </div>
+        <EmptyState
+          icon={<InboxIcon />}
+          title="No documents yet"
+          description="Upload a PO, GRN, or Invoice to get started - upload order doesn't matter."
+          action={
+            <Button icon={<PlusIcon />} onClick={() => setUploadOpen(true)}>
+              Upload Document
+            </Button>
+          }
+        />
       )}
 
       <div className="grid gap-3">

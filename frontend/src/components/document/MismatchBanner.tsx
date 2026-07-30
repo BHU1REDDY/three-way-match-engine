@@ -15,40 +15,99 @@ const REASON_LABELS: Record<string, string> = {
   unmapped_master_sku: 'Unmapped SKU',
 };
 
-const STATUS_STYLE: Record<MatchStatus, { bg: string; text: string; label: string }> = {
-  matched: { bg: 'bg-green-50 border-green-200', text: 'text-green-800', label: 'Matched' },
-  partially_matched: {
-    bg: 'bg-amber-50 border-amber-200',
-    text: 'text-amber-800',
-    label: 'Partially Matched',
+const STATUS_STYLE: Record<
+  MatchStatus,
+  { bg: string; border: string; text: string; iconBg: string; iconText: string; label: string; description: string }
+> = {
+  matched: {
+    bg: 'bg-green-50',
+    border: 'border-green-200',
+    text: 'text-green-800',
+    iconBg: 'bg-green-100',
+    iconText: 'text-green-600',
+    label: 'Matched',
+    description: 'All quantities and prices reconcile across PO, GRN, and Invoice.',
   },
-  mismatch: { bg: 'bg-red-50 border-red-200', text: 'text-red-800', label: 'Mismatch' },
+  partially_matched: {
+    bg: 'bg-amber-50',
+    border: 'border-amber-200',
+    text: 'text-amber-800',
+    iconBg: 'bg-amber-100',
+    iconText: 'text-amber-600',
+    label: 'Partially Matched',
+    description: 'No hard violations, but some quantities or prices need a second look.',
+  },
+  mismatch: {
+    bg: 'bg-red-50',
+    border: 'border-red-200',
+    text: 'text-red-800',
+    iconBg: 'bg-red-100',
+    iconText: 'text-red-600',
+    label: 'Mismatch',
+    description: 'One or more hard violations were found across these documents.',
+  },
   insufficient_documents: {
-    bg: 'bg-gray-50 border-gray-200',
-    text: 'text-gray-600',
+    bg: 'bg-gray-50',
+    border: 'border-gray-200',
+    text: 'text-gray-700',
+    iconBg: 'bg-gray-200',
+    iconText: 'text-gray-500',
     label: 'Insufficient Documents',
+    description: 'Waiting on the full PO + GRN + Invoice set before a match can be computed.',
   },
 };
+
+function StatusIcon({ status, className }: { status: MatchStatus; className?: string }) {
+  if (status === 'matched') {
+    return (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.25" strokeLinecap="round" strokeLinejoin="round" className={className}>
+        <path d="M20 6 9 17l-5-5" />
+      </svg>
+    );
+  }
+  if (status === 'insufficient_documents') {
+    return (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 7v5l3 3" />
+      </svg>
+    );
+  }
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z" />
+      <path d="M12 9v4M12 17h.01" />
+    </svg>
+  );
+}
 
 export function MismatchBanner({ status, reasons }: { status: MatchStatus; reasons: string[] }) {
   if (status === 'matched') return null;
   const style = STATUS_STYLE[status];
 
   return (
-    <div className={`rounded-lg border p-3 ${style.bg}`}>
-      <p className={`text-sm font-semibold ${style.text}`}>{style.label}</p>
-      {reasons.length > 0 && (
-        <div className="mt-2 flex flex-wrap gap-1.5">
-          {reasons.map((r) => (
-            <span
-              key={r}
-              className="rounded-full border border-current/20 bg-white px-2 py-0.5 text-xs font-medium text-gray-700"
-            >
-              {REASON_LABELS[r] || r}
-            </span>
-          ))}
+    <div className={`rounded-xl border ${style.border} ${style.bg} p-4`}>
+      <div className="flex items-start gap-3">
+        <div className={`flex h-8 w-8 shrink-0 items-center justify-center rounded-lg ${style.iconBg} ${style.iconText}`}>
+          <StatusIcon status={status} />
         </div>
-      )}
+        <div className="min-w-0 flex-1">
+          <p className={`text-sm font-semibold ${style.text}`}>{style.label}</p>
+          <p className="mt-0.5 text-xs text-gray-500">{style.description}</p>
+          {reasons.length > 0 && (
+            <div className="mt-3 flex flex-wrap gap-1.5">
+              {reasons.map((r) => (
+                <span
+                  key={r}
+                  className="rounded-full border border-gray-200 bg-white px-2.5 py-1 text-xs font-medium text-gray-700 shadow-sm"
+                >
+                  {REASON_LABELS[r] || r}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
     </div>
   );
 }
