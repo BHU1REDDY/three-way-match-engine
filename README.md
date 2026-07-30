@@ -45,6 +45,29 @@ testable offline:
 - To use the real API: set `GEMINI_API_KEY` and `MOCK_GEMINI=false` in `backend/.env`, restart the
   backend. `GEMINI_MODEL` defaults to `gemini-2.0-flash`.
 
+**Verified against the real API.** All three sample documents were successfully uploaded through
+the live Gemini API during development (see `docs/samples/parsed-*.json` for the actual extracted
+output, and `docs/samples/match-result.json`/`summary-result.json` for the computed results from
+that real run - these are genuine API output, not the mock fixtures). Two things worth knowing if
+you plug in your own key:
+
+- **Model availability/quota varies by key and changes over time.** `gemini-2.0-flash` returned
+  `429 RESOURCE_EXHAUSTED` (zero free-tier quota) on the keys used during development; newer models
+  worked. If your default model 404s or 429s, list what your key can actually call:
+  `curl "https://generativelanguage.googleapis.com/v1beta/models?key=$GEMINI_API_KEY"` and set
+  `GEMINI_MODEL` to one that supports `generateContent`.
+- **Transient `503`/`429` overload errors are retried with backoff**, separately from the
+  malformed-JSON retry: `gemini.js`'s `callWithTransientRetry` retries up to 3 times with
+  exponential backoff (1.5s/3s/6s) on 429/500/503-style errors before falling through to the
+  schema-clarification retry, then finally failing with a clear 422. This was added after hitting
+  genuine `503 "high demand"` responses from the live API mid-development - a real robustness gap,
+  not a hypothetical one.
+- Real extraction surfaces messier real-world noise than the curated mock fixtures do - e.g. the
+  actual PO PDF has stray `"psm"` page-furniture text that Gemini sometimes appended to an
+  `itemCode` (`"11423 psm"` instead of `"11423"`), which correctly shows up as
+  `unmapped_master_sku` rather than silently matching or crashing. That's the master-resolution
+  "never drop it" guarantee working as intended against real OCR noise, not a bug.
+
 The mock fixtures are **not arbitrary** - they're transcribed from the assignment's actual sample
 PO/GRN/Invoice PDFs (`CI4PO05788` / M/s AFP → Cloudstore Retail), including the real partial
 delivery on two line items, so the demo data exercises genuine matching logic rather than

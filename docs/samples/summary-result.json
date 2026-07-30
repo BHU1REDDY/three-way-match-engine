@@ -1,28 +1,28 @@
 {
     "poNumber": "CI4PO05788",
     "statCards": {
-        "poAmount": 286881.35,
-        "totalInvoiced": 175527.5,
-        "totalReceived": 172663.25
+        "poAmount": 184735.35,
+        "totalInvoiced": 743263.69,
+        "totalReceived": 163163
     },
     "rows": [
         {
             "documentType": "grn",
             "documentNumber": "CI4000020234",
             "date": "2026-03-24T00:00:00.000Z",
-            "qty": 947,
-            "cumulativeReceivedQty": 947,
+            "qty": 4705,
+            "cumulativeReceivedQty": 4705,
             "cumulativeInvoicedQty": 0,
-            "pendingDeliveryQty": 1430
+            "pendingDeliveryQty": 1522
         },
         {
             "documentType": "invoice",
             "documentNumber": "IN25MH2504251",
             "date": "2026-03-24T00:00:00.000Z",
-            "qty": 942,
-            "cumulativeReceivedQty": 947,
-            "cumulativeInvoicedQty": 942,
-            "pendingDeliveryQty": 1430
+            "qty": 4705,
+            "cumulativeReceivedQty": 4705,
+            "cumulativeInvoicedQty": 4705,
+            "pendingDeliveryQty": 1522
         },
         {
             "documentType": "current_status",
@@ -30,9 +30,9 @@
             "date": null,
             "qty": null,
             "status": "mismatch",
-            "cumulativeReceivedQty": 947,
-            "cumulativeInvoicedQty": 942,
-            "pendingDeliveryQty": 1430
+            "cumulativeReceivedQty": 4705,
+            "cumulativeInvoicedQty": 4705,
+            "pendingDeliveryQty": 1522
         }
     ],
     "status": "mismatch"

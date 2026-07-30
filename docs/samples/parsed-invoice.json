@@ -8,70 +8,217 @@
       "description": "PSM Cheesy Spicy Vegetable Momos 24Pcs",
       "quantity": 50,
       "unitRate": 220.76,
-      "mrp": 305
+      "mrp": null
     },
     {
       "itemCode": "FG-M-F-1703",
       "description": "Meatigo RTC Meatigo Hot Wings 250g",
       "quantity": 75,
       "unitRate": 126.67,
-      "mrp": 175
+      "mrp": null
     },
     {
       "itemCode": "FG-M-F-0620",
       "description": "Meatigo Chicken Curry Cuts 450g (5%)",
       "quantity": 30,
       "unitRate": 141.14,
-      "mrp": 195
+      "mrp": null
     },
     {
       "itemCode": "FG-M-F-0619",
       "description": "Meatigo Chicken Boneless Breast 450g (5%)",
       "quantity": 30,
       "unitRate": 199.05,
-      "mrp": 275
-    },
-    {
-      "itemCode": "FG-P-F-0237",
-      "description": "PSM Frozen Pork Pepperoni Salami 100g",
-      "quantity": 40,
-      "unitRate": 133.9,
-      "mrp": 185
+      "mrp": null
     },
     {
       "itemCode": "FG-P-F-0249",
       "description": "PSM Pork Plain Salami 200g",
       "quantity": 75,
       "unitRate": 188.19,
-      "mrp": 260
+      "mrp": null
     },
     {
       "itemCode": "FG-P-F-0234",
       "description": "PSM Frozen Chicken Chilli Salami 200g",
       "quantity": 75,
       "unitRate": 126.67,
-      "mrp": 175
+      "mrp": null
     },
     {
       "itemCode": "FG-P-F-0413",
       "description": "PSM Frozen Chicken Seekh Kabab 500g",
       "quantity": 272,
       "unitRate": 228,
-      "mrp": 315
+      "mrp": null
     },
     {
       "itemCode": "FG-M-F-0602",
       "description": "Meatigo Chicken Drumsticks 450g (5%)",
       "quantity": 270,
       "unitRate": 188.19,
-      "mrp": 260
+      "mrp": null
     },
     {
       "itemCode": "FG-P-F-1707",
       "description": "PSM Spring Roll - Chinese Veg 240g",
       "quantity": 25,
       "unitRate": 119.43,
-      "mrp": 165
+      "mrp": null
+    },
+    {
+      "itemCode": "FG-M-F-0622",
+      "description": "Meatigo Chicken Keema (Mince) 450g (5%)",
+      "quantity": 360,
+      "unitRate": 199.05,
+      "mrp": null
+    },
+    {
+      "itemCode": "FG-P-F-0505",
+      "description": "PSM Chicken Momos 24Pcs",
+      "quantity": 475,
+      "unitRate": 220.76,
+      "mrp": null
+    },
+    {
+      "itemCode": "FG-P-F-0512",
+      "description": "PSM Spicy Chicken Momos 24Pcs",
+      "quantity": 325,
+      "unitRate": 220.76,
+      "mrp": null
+    },
+    {
+      "itemCode": "FG-P-F-0514",
+      "description": "PSM Vegetable & Paneer Momos 24Pcs",
+      "quantity": 75,
+      "unitRate": 202.67,
+      "mrp": null
+    },
+    {
+      "itemCode": "FG-P-F-0335",
+      "description": "PSM Chicken Cheese & Onion Sausage 250g",
+      "quantity": 40,
+      "unitRate": 144.76,
+      "mrp": null
+    },
+    {
+      "itemCode": "FG-P-F-0504",
+      "description": "PSM Chicken Momos 10Pcs",
+      "quantity": 450,
+      "unitRate": 133.9,
+      "mrp": null
+    },
+    {
+      "itemCode": "FG-P-F-0513",
+      "description": "PSM Vegetable & Paneer Momos 10Pcs",
+      "quantity": 400,
+      "unitRate": 112.19,
+      "mrp": null
+    },
+    {
+      "itemCode": "FG-M-F-1728",
+      "description": "Meatigo RTC Everyday Chicken Breast 150g",
+      "quantity": 90,
+      "unitRate": 119.43,
+      "mrp": null
+    },
+    {
+      "itemCode": "FG-P-F-0323",
+      "description": "PSM Frozen Pork Sausage 250g",
+      "quantity": 40,
+      "unitRate": 170.1,
+      "mrp": null
+    },
+    {
+      "itemCode": "FG-P-F-0236",
+      "description": "PSM Frozen Pork Ham 200g",
+      "quantity": 50,
+      "unitRate": 177.33,
+      "mrp": null
+    },
+    {
+      "itemCode": "FG-P-F-0580",
+      "description": "PSM Whole Wheat Momos - Veg & Paneer 330g",
+      "quantity": 40,
+      "unitRate": 162.86,
+      "mrp": null
+    },
+    {
+      "itemCode": "FG-P-F-0527",
+      "description": "PSM Peri Peri Veg Momos 15Pcs",
+      "quantity": 80,
+      "unitRate": 88.67,
+      "mrp": null
+    },
+    {
+      "itemCode": "FG-P-F-0247",
+      "description": "PSM Frozen Chicken Salami 200g",
+      "quantity": 25,
+      "unitRate": 137.52,
+      "mrp": null
+    },
+    {
+      "itemCode": "FG-P-F-0102",
+      "description": "PSM Frozen Pork Breakfast Bacon 150g",
+      "quantity": 36,
+      "unitRate": 152,
+      "mrp": null
+    },
+    {
+      "itemCode": "FG-P-F-0321",
+      "description": "PSM Frozen Chicken Sausage 250g",
+      "quantity": 380,
+      "unitRate": 130.29,
+      "mrp": null
+    },
+    {
+      "itemCode": "FG-P-F-0581",
+      "description": "PSM Whole Wheat Momos - Chicken 330g",
+      "quantity": 80,
+      "unitRate": 170.1,
+      "mrp": null
+    },
+    {
+      "itemCode": "FG-P-F-0501",
+      "description": "PSM FS Chef Momo - Chicken 1kg",
+      "quantity": 72,
+      "unitRate": 247.62,
+      "mrp": null
+    },
+    {
+      "itemCode": "FG-P-F-0564",
+      "description": "PSM Cheese & Chicken Momos 540g",
+      "quantity": 25,
+      "unitRate": 238.86,
+      "mrp": null
+    },
+    {
+      "itemCode": "FG-M-F-1729",
+      "description": "Meatigo RTC Everyday Fish Fillet 200g",
+      "quantity": 30,
+      "unitRate": 188.19,
+      "mrp": null
+    },
+    {
+      "itemCode": "FG-P-F-0542",
+      "description": "Peri Peri Chicken Momos 250g",
+      "quantity": 640,
+      "unitRate": 72.02,
+      "mrp": null
+    },
+    {
+      "itemCode": "FG-P-F-0237",
+      "description": "PSM Frozen Pork Pepperoni Salami 100g",
+      "quantity": 40,
+      "unitRate": 133.9,
+      "mrp": null
+    },
+    {
+      "itemCode": "FG-P-F-1911",
+      "description": "PSM Pizza Minis - Chicken Tikka 180g",
+      "quantity": 50,
+      "unitRate": 115.09,
+      "mrp": null
     }
   ]
 }

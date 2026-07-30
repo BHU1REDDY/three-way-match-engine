@@ -4,64 +4,204 @@
   "vendorName": "M/s AFP",
   "items": [
     {
-      "itemCode": "11423",
-      "description": "Cheesy Spicy Veg Momos 24.0 Pieces",
+      "itemCode": "11423 psm",
+      "description": "Cheesy Spicy Veg Momos 24.0 Pieces Colour: Size: size Brand:Band_2",
       "quantity": 50
     },
     {
       "itemCode": "11797",
-      "description": "Meatigo Hot Wings 250.0 g",
+      "description": "Meatigo Hot Wings 250.0 g Colour: Size: size Brand:Band_3",
       "quantity": 75
     },
     {
       "itemCode": "18003",
-      "description": "Meatigo Chicken Curry Cut Skinless Frozen 450.0 g",
+      "description": "Meatigo Chicken Curry Cut Skinless Frozen 450.0 g Colour: Size: size Brand:Band_1",
       "quantity": 120
     },
     {
       "itemCode": "18004",
-      "description": "Meatigo Chicken Boneless Breast Frozen 450.0 g",
+      "description": "Meatigo Chicken Boneless Breast Frozen 450.0 g Colour: Size: size Brand:Band_1",
       "quantity": 540
     },
     {
-      "itemCode": "205950",
-      "description": "Frozen Pork Pepperoni Salami 100.0 g",
-      "quantity": 40
+      "itemCode": "18906 psm",
+      "description": "Spring Rolls Veg Frozen 240.0 g Colour: Size: size Brand:Band_4",
+      "quantity": 175
     },
     {
-      "itemCode": "253430",
-      "description": "Pork Salami 200.0 g",
+      "itemCode": "253430 psm",
+      "description": "Pork Salami 200.0 g Colour: Size: size Brand:",
       "quantity": 75
     },
     {
-      "itemCode": "33387",
-      "description": "Frozen Chicken Chilli Salami 200.0 g",
+      "itemCode": "33387 psm",
+      "description": "Frozen Chicken Chilli Salami 200.0 g Colour: Size: size Brand:TORSC",
       "quantity": 75
     },
     {
-      "itemCode": "33390",
-      "description": "Chicken Seekh Kebab 500.0 g",
+      "itemCode": "33388 psm",
+      "description": "Frozen Chicken Pepperoni Salami 100.0 g Colour: Size: size Brand:Band_3",
+      "quantity": 120
+    },
+    {
+      "itemCode": "33390 psm",
+      "description": "Chicken Seekh Kebab 500.0 g Colour: Size: size Brand:Band_3",
       "quantity": 272
     },
     {
       "itemCode": "398656",
-      "description": "Meatigo Chicken Drumsticks 450.0 g",
+      "description": "Meatigo Chicken Drumsticks 450.0 g Colour: Size: size Brand:",
       "quantity": 270
     },
     {
-      "itemCode": "414867",
-      "description": "Chinese Veg Spring Rolls 240.0 g",
+      "itemCode": "414867 psm",
+      "description": "Chinese Veg Spring Rolls 240.0 g Colour: Size: size Brand:",
       "quantity": 25
     },
     {
       "itemCode": "432518",
-      "description": "Meatigo Chicken Kheema 450.0 g",
+      "description": "Meatigo Chicken Kheema 450.0 g Colour: Size: size Brand:",
       "quantity": 360
     },
     {
-      "itemCode": "4459",
-      "description": "Original Chicken Momos 24.0 Pieces",
+      "itemCode": "4459 psm",
+      "description": "Original Chicken Momos 24.0 Pieces Colour: Size: size Brand:Band_1",
       "quantity": 475
+    },
+    {
+      "itemCode": "4460 psm",
+      "description": "Spicy Chicken Momos 24.0 Pieces Colour: Size: size Brand:Band_1",
+      "quantity": 325
+    },
+    {
+      "itemCode": "4461 psm",
+      "description": "Veg & Paneer Momos 24.0 Pieces Colour: Size: size Brand:Band_2",
+      "quantity": 75
+    },
+    {
+      "itemCode": "453259 psm",
+      "description": "Chicken Cheese & Onion Sausage 250.0 g Colour: Size: size Brand:",
+      "quantity": 40
+    },
+    {
+      "itemCode": "4694 psm",
+      "description": "Original Chicken Momos 10.0 Pieces Colour: Size: size Brand:Band_4",
+      "quantity": 450
+    },
+    {
+      "itemCode": "4695 psm",
+      "description": "Spicy Chicken Momos 10.0 Pieces Colour: Size: size Brand:Band_3",
+      "quantity": 100
+    },
+    {
+      "itemCode": "4697 psm",
+      "description": "Veg & Paneer Momos 10.0 Pieces Colour: Size: size Brand:Band_2",
+      "quantity": 400
+    },
+    {
+      "itemCode": "469735",
+      "description": "Meatigo Everyday Chicken Breast (Frozen) 150.0 g Colour: Size: size Brand:",
+      "quantity": 90
+    },
+    {
+      "itemCode": "4698 psm",
+      "description": "Chicken Ham 200.0 g Colour: Size: size Brand:Band_1",
+      "quantity": 150
+    },
+    {
+      "itemCode": "4699 psm",
+      "description": "Pork Sausage 250.0 g Colour: Size: size Brand:Band_2",
+      "quantity": 40
+    },
+    {
+      "itemCode": "4700 psm",
+      "description": "Pork Ham 200.0 g Colour: Size: size Brand:Band_1",
+      "quantity": 50
+    },
+    {
+      "itemCode": "4701 psm",
+      "description": "Pork Breakfast Bacon 300.0 g Colour: Size: size Brand:Band_1",
+      "quantity": 20
+    },
+    {
+      "itemCode": "470663 psm",
+      "description": "Whole Wheat Momos - Veg & Paneer 330.0 g Colour: Size: size Brand:",
+      "quantity": 80
+    },
+    {
+      "itemCode": "489632 psm",
+      "description": "Tandoori Momos - Chicken 280.0 g Colour: Size: size Brand:",
+      "quantity": 35
+    },
+    {
+      "itemCode": "49168 psm",
+      "description": "Peri Peri Veg Momos 15.0 Pieces Colour: Size: size Brand:Band_2",
+      "quantity": 80
+    },
+    {
+      "itemCode": "498695 psm",
+      "description": "Chicken Salami 200.0 g Colour: Size: size Brand:",
+      "quantity": 25
+    },
+    {
+      "itemCode": "526303 psm",
+      "description": "Chicken Pepper & Herb Sausage 250.0 g Colour: Size: size Brand:",
+      "quantity": 20
+    },
+    {
+      "itemCode": "598770 psm",
+      "description": "Pork Breakfast Bacon 150.0 g Colour: Size: size Brand:",
+      "quantity": 36
+    },
+    {
+      "itemCode": "6664 psm",
+      "description": "Chicken Sausages 250.0 g Colour: Size: size Brand:Band_2",
+      "quantity": 380
+    },
+    {
+      "itemCode": "6665 psm",
+      "description": "Chicken Cheese & Chilli Sausages 250.0 g Colour: Size: size Brand:Band_3",
+      "quantity": 100
+    },
+    {
+      "itemCode": "730016 psm",
+      "description": "Whole Wheat Chicken Momos 330.0 g Colour: Size: size Brand:",
+      "quantity": 80
+    },
+    {
+      "itemCode": "750414 psm",
+      "description": "Super Saver Chicken Momo Pack (Chef Momos) 1.0 kg Colour: Size: size Brand:",
+      "quantity": 72
+    },
+    {
+      "itemCode": "755774 psm",
+      "description": "Chicken & Cheese Momos 540.0 g Colour: Size: size Brand:",
+      "quantity": 25
+    },
+    {
+      "itemCode": "790919",
+      "description": "Meatigo Everyday Fish Fillet 200.0 g Colour: Size: size Brand:",
+      "quantity": 30
+    },
+    {
+      "itemCode": "81521 psm",
+      "description": "Peri Peri Chicken Momos 250.0 g Colour: Size: size Brand:Band_4",
+      "quantity": 640
+    },
+    {
+      "itemCode": "89201 psm",
+      "description": "Chicken English Breakfast Sausage 1.0 kg Colour: Size: size Brand:Band_2",
+      "quantity": 162
+    },
+    {
+      "itemCode": "205950 psm",
+      "description": "Frozen Pork Pepperoni Salami 100.0 g Colour: Size: size Brand:Band_5",
+      "quantity": 40
+    },
+    {
+      "itemCode": "507809 psm",
+      "description": "Pizza Minis - Chicken Tikka 180.0 g Colour: Size: size Brand:Band_6",
+      "quantity": 50
     }
   ]
 }

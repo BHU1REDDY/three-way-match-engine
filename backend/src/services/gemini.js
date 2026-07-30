@@ -9,6 +9,18 @@ function extractJson(text) {
   return JSON.parse(candidate.trim());
 }
 
+// Transient server-side hiccups (model overloaded, rate limited) are common
+// in practice and unrelated to whether our prompt/schema is correct - worth
+// retrying with backoff, separately from the "malformed JSON" retry below.
+function isTransientError(err) {
+  const message = String(err?.message || '');
+  return /\[(429|500|503)\s*\]/.test(message) || /overloaded|high demand|RESOURCE_EXHAUSTED|UNAVAILABLE/i.test(message);
+}
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 async function callGeminiOnce({ filePath, mimeType, documentType, clarify }) {
   const apiKey = process.env.GEMINI_API_KEY;
   if (!apiKey) {
@@ -33,6 +45,23 @@ async function callGeminiOnce({ filePath, mimeType, documentType, clarify }) {
   return extractJson(text);
 }
 
+/** Retries transient (5xx/429) failures with backoff; rethrows immediately
+ * on anything else (bad JSON, missing key, etc.) so the caller's own
+ * malformed-output retry logic can handle those. */
+async function callWithTransientRetry(args, { attempts = 3, baseDelayMs = 1500 } = {}) {
+  let lastErr;
+  for (let attempt = 0; attempt < attempts; attempt += 1) {
+    try {
+      return await callGeminiOnce(args);
+    } catch (err) {
+      lastErr = err;
+      if (!isTransientError(err) || attempt === attempts - 1) throw err;
+      await sleep(baseDelayMs * 2 ** attempt);
+    }
+  }
+  throw lastErr;
+}
+
 /**
  * Calls Gemini for the given file/documentType, retrying once if the first
  * response isn't parseable JSON. Throws on final failure - caller decides
@@ -40,9 +69,9 @@ async function callGeminiOnce({ filePath, mimeType, documentType, clarify }) {
  */
 async function parseWithGemini({ filePath, mimeType, documentType }) {
   try {
-    return await callGeminiOnce({ filePath, mimeType, documentType, clarify: false });
+    return await callWithTransientRetry({ filePath, mimeType, documentType, clarify: false });
   } catch (firstErr) {
-    return callGeminiOnce({ filePath, mimeType, documentType, clarify: true });
+    return callWithTransientRetry({ filePath, mimeType, documentType, clarify: true });
   }
 }
 
