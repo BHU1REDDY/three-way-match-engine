@@ -1,0 +1,818 @@
+{
+    "poNumber": "CI4PO05788",
+    "status": "mismatch",
+    "reasons": [
+        "invoice_date_after_po_date",
+        "price_mismatch",
+        "mrp_mismatch",
+        "unmapped_master_sku",
+        "item_missing_in_po"
+    ],
+    "items": [
+        {
+            "key": "sku:6a6b0bac0ee4a5284b29e0e1",
+            "itemCode": "11423",
+            "description": "Cheesy Spicy Veg Momos 24.0 Pieces",
+            "skuMaster": {
+                "_id": "6a6b0bac0ee4a5284b29e0e1",
+                "skuErpCode": "11423",
+                "name": "Cheesy Spicy Veg Momos 24 Pieces",
+                "eanCode": "FG-P-F-0503",
+                "hsnCode": "19022010",
+                "uom": "PKT",
+                "agreedRate": 220.76,
+                "mrp": 305
+            },
+            "poQty": 50,
+            "grnQty": 50,
+            "invoiceQty": 50,
+            "unitRate": 220.76,
+            "mrp": 305,
+            "grossAmount": 11038,
+            "reasons": []
+        },
+        {
+            "key": "sku:6a6b0bac0ee4a5284b29e0e2",
+            "itemCode": "11797",
+            "description": "Meatigo Hot Wings 250.0 g",
+            "skuMaster": {
+                "_id": "6a6b0bac0ee4a5284b29e0e2",
+                "skuErpCode": "11797",
+                "name": "Meatigo Hot Wings 250g",
+                "eanCode": "FG-M-F-1703",
+                "hsnCode": "02071400",
+                "uom": "PKT",
+                "agreedRate": 126.67,
+                "mrp": 175
+            },
+            "poQty": 75,
+            "grnQty": 75,
+            "invoiceQty": 75,
+            "unitRate": 126.67,
+            "mrp": 175,
+            "grossAmount": 9500.25,
+            "reasons": []
+        },
+        {
+            "key": "sku:6a6b0bac0ee4a5284b29e0e3",
+            "itemCode": "18003",
+            "description": "Meatigo Chicken Curry Cut Skinless Frozen 450.0 g",
+            "skuMaster": {
+                "_id": "6a6b0bac0ee4a5284b29e0e3",
+                "skuErpCode": "18003",
+                "name": "Meatigo Chicken Curry Cut Skinless Frozen 450g",
+                "eanCode": "FG-M-F-0620",
+                "hsnCode": "02071300",
+                "uom": "PKT",
+                "agreedRate": 141.14,
+                "mrp": 195
+            },
+            "poQty": 120,
+            "grnQty": 30,
+            "invoiceQty": 30,
+            "unitRate": 141.14,
+            "mrp": 195,
+            "grossAmount": 4234.2,
+            "reasons": []
+        },
+        {
+            "key": "sku:6a6b0bac0ee4a5284b29e0e4",
+            "itemCode": "18004",
+            "description": "Meatigo Chicken Boneless Breast Frozen 450.0 g",
+            "skuMaster": {
+                "_id": "6a6b0bac0ee4a5284b29e0e4",
+                "skuErpCode": "18004",
+                "name": "Meatigo Chicken Boneless Breast Frozen 450g",
+                "eanCode": "FG-M-F-0619",
+                "hsnCode": "02071300",
+                "uom": "PKT",
+                "agreedRate": 199.05,
+                "mrp": 275
+            },
+            "poQty": 540,
+            "grnQty": 30,
+            "invoiceQty": 30,
+            "unitRate": 199.05,
+            "mrp": 275,
+            "grossAmount": 5971.5,
+            "reasons": []
+        },
+        {
+            "key": "sku:6a6b0bac0ee4a5284b29e0e5",
+            "itemCode": "205950",
+            "description": "Frozen Pork Pepperoni Salami 100.0 g",
+            "skuMaster": {
+                "_id": "6a6b0bac0ee4a5284b29e0e5",
+                "skuErpCode": "205950",
+                "name": "Frozen Pork Pepperoni Salami 100g",
+                "eanCode": "FG-P-F-0237",
+                "hsnCode": "16010000",
+                "uom": "PKT",
+                "agreedRate": 133.9,
+                "mrp": 185
+            },
+            "poQty": 40,
+            "grnQty": 40,
+            "invoiceQty": 40,
+            "unitRate": 133.9,
+            "mrp": 185,
+            "grossAmount": 5356,
+            "reasons": []
+        },
+        {
+            "key": "sku:6a6b0bac0ee4a5284b29e0e6",
+            "itemCode": "253430",
+            "description": "Pork Salami 200.0 g",
+            "skuMaster": {
+                "_id": "6a6b0bac0ee4a5284b29e0e6",
+                "skuErpCode": "253430",
+                "name": "Pork Salami 200g",
+                "eanCode": "FG-P-F-0249",
+                "hsnCode": "16010000",
+                "uom": "PKT",
+                "agreedRate": 150,
+                "mrp": 260
+            },
+            "poQty": 75,
+            "grnQty": 75,
+            "invoiceQty": 75,
+            "unitRate": 188.19,
+            "mrp": 260,
+            "grossAmount": 14114.25,
+            "reasons": [
+                "price_mismatch"
+            ]
+        },
+        {
+            "key": "sku:6a6b0ee0b366e774879c6d22",
+            "itemCode": "33387",
+            "description": "Frozen Chicken Chilli Salami 200.0 g",
+            "skuMaster": {
+                "_id": "6a6b0ee0b366e774879c6d22",
+                "skuErpCode": "33387",
+                "name": "Frozen Chicken Chilli Salami 200g",
+                "eanCode": "FG-P-F-0234",
+                "hsnCode": null,
+                "uom": null,
+                "agreedRate": 126.67,
+                "mrp": 175
+            },
+            "poQty": 75,
+            "grnQty": 75,
+            "invoiceQty": 75,
+            "unitRate": 126.67,
+            "mrp": 175,
+            "grossAmount": 9500.25,
+            "reasons": []
+        },
+        {
+            "key": "sku:6a6b0bac0ee4a5284b29e0e7",
+            "itemCode": "33390",
+            "description": "Chicken Seekh Kebab 500.0 g",
+            "skuMaster": {
+                "_id": "6a6b0bac0ee4a5284b29e0e7",
+                "skuErpCode": "33390",
+                "name": "Chicken Seekh Kebab 500g",
+                "eanCode": "FG-P-F-0413",
+                "hsnCode": "16010000",
+                "uom": "PKT",
+                "agreedRate": 228,
+                "mrp": 315
+            },
+            "poQty": 272,
+            "grnQty": 272,
+            "invoiceQty": 272,
+            "unitRate": 228,
+            "mrp": 315,
+            "grossAmount": 62016,
+            "reasons": []
+        },
+        {
+            "key": "sku:6a6b0bac0ee4a5284b29e0e8",
+            "itemCode": "398656",
+            "description": "Meatigo Chicken Drumsticks 450.0 g",
+            "skuMaster": {
+                "_id": "6a6b0bac0ee4a5284b29e0e8",
+                "skuErpCode": "398656",
+                "name": "Meatigo Chicken Drumsticks 450g",
+                "eanCode": "FG-M-F-0602",
+                "hsnCode": "02071400",
+                "uom": "PKT",
+                "agreedRate": 188.19,
+                "mrp": 300
+            },
+            "poQty": 270,
+            "grnQty": 270,
+            "invoiceQty": 270,
+            "unitRate": 188.19,
+            "mrp": 260,
+            "grossAmount": 50811.3,
+            "reasons": [
+                "mrp_mismatch"
+            ]
+        },
+        {
+            "key": "sku:6a6b0bac0ee4a5284b29e0e9",
+            "itemCode": "414867",
+            "description": "Chinese Veg Spring Rolls 240.0 g",
+            "skuMaster": {
+                "_id": "6a6b0bac0ee4a5284b29e0e9",
+                "skuErpCode": "414867",
+                "name": "Chinese Veg Spring Rolls 240g",
+                "eanCode": "FG-P-F-1707",
+                "hsnCode": "20049000",
+                "uom": "PKT",
+                "agreedRate": 119.43,
+                "mrp": 165
+            },
+            "poQty": 25,
+            "grnQty": 25,
+            "invoiceQty": 25,
+            "unitRate": 119.43,
+            "mrp": 165,
+            "grossAmount": 2985.75,
+            "reasons": []
+        },
+        {
+            "key": "raw:432518",
+            "itemCode": "432518",
+            "description": "Meatigo Chicken Kheema 450.0 g",
+            "skuMaster": null,
+            "poQty": 360,
+            "grnQty": 0,
+            "invoiceQty": 0,
+            "unitRate": null,
+            "mrp": null,
+            "grossAmount": null,
+            "reasons": [
+                "unmapped_master_sku"
+            ]
+        },
+        {
+            "key": "raw:4459",
+            "itemCode": "4459",
+            "description": "Original Chicken Momos 24.0 Pieces",
+            "skuMaster": null,
+            "poQty": 475,
+            "grnQty": 0,
+            "invoiceQty": 0,
+            "unitRate": null,
+            "mrp": null,
+            "grossAmount": null,
+            "reasons": [
+                "unmapped_master_sku"
+            ]
+        },
+        {
+            "key": "raw:grn-extra-001",
+            "itemCode": "GRN-EXTRA-001",
+            "description": "Unbudgeted Sample Pack (not on PO)",
+            "skuMaster": null,
+            "poQty": null,
+            "grnQty": 5,
+            "invoiceQty": 0,
+            "unitRate": null,
+            "mrp": 50,
+            "grossAmount": null,
+            "reasons": [
+                "item_missing_in_po",
+                "unmapped_master_sku"
+            ]
+        }
+    ],
+    "linkedDocs": {
+        "po": [
+            {
+                "_id": "6a6b0bb8b366e774879c6d1e",
+                "poNumber": "CI4PO05788",
+                "poDate": "2026-03-17T00:00:00.000Z",
+                "vendorName": "M/s AFP",
+                "items": [
+                    {
+                        "itemCode": "11423",
+                        "description": "Cheesy Spicy Veg Momos 24.0 Pieces",
+                        "quantity": 50,
+                        "skuMaster": "6a6b0bac0ee4a5284b29e0e1",
+                        "unmappedReason": null
+                    },
+                    {
+                        "itemCode": "11797",
+                        "description": "Meatigo Hot Wings 250.0 g",
+                        "quantity": 75,
+                        "skuMaster": "6a6b0bac0ee4a5284b29e0e2",
+                        "unmappedReason": null
+                    },
+                    {
+                        "itemCode": "18003",
+                        "description": "Meatigo Chicken Curry Cut Skinless Frozen 450.0 g",
+                        "quantity": 120,
+                        "skuMaster": "6a6b0bac0ee4a5284b29e0e3",
+                        "unmappedReason": null
+                    },
+                    {
+                        "itemCode": "18004",
+                        "description": "Meatigo Chicken Boneless Breast Frozen 450.0 g",
+                        "quantity": 540,
+                        "skuMaster": "6a6b0bac0ee4a5284b29e0e4",
+                        "unmappedReason": null
+                    },
+                    {
+                        "itemCode": "205950",
+                        "description": "Frozen Pork Pepperoni Salami 100.0 g",
+                        "quantity": 40,
+                        "skuMaster": "6a6b0bac0ee4a5284b29e0e5",
+                        "unmappedReason": null
+                    },
+                    {
+                        "itemCode": "253430",
+                        "description": "Pork Salami 200.0 g",
+                        "quantity": 75,
+                        "skuMaster": "6a6b0bac0ee4a5284b29e0e6",
+                        "unmappedReason": null
+                    },
+                    {
+                        "itemCode": "33387",
+                        "description": "Frozen Chicken Chilli Salami 200.0 g",
+                        "quantity": 75,
+                        "skuMaster": null,
+                        "unmappedReason": "unmapped_master_sku"
+                    },
+                    {
+                        "itemCode": "33390",
+                        "description": "Chicken Seekh Kebab 500.0 g",
+                        "quantity": 272,
+                        "skuMaster": "6a6b0bac0ee4a5284b29e0e7",
+                        "unmappedReason": null
+                    },
+                    {
+                        "itemCode": "398656",
+                        "description": "Meatigo Chicken Drumsticks 450.0 g",
+                        "quantity": 270,
+                        "skuMaster": "6a6b0bac0ee4a5284b29e0e8",
+                        "unmappedReason": null
+                    },
+                    {
+                        "itemCode": "414867",
+                        "description": "Chinese Veg Spring Rolls 240.0 g",
+                        "quantity": 25,
+                        "skuMaster": "6a6b0bac0ee4a5284b29e0e9",
+                        "unmappedReason": null
+                    },
+                    {
+                        "itemCode": "432518",
+                        "description": "Meatigo Chicken Kheema 450.0 g",
+                        "quantity": 360,
+                        "skuMaster": null,
+                        "unmappedReason": "unmapped_master_sku"
+                    },
+                    {
+                        "itemCode": "4459",
+                        "description": "Original Chicken Momos 24.0 Pieces",
+                        "quantity": 475,
+                        "skuMaster": null,
+                        "unmappedReason": "unmapped_master_sku"
+                    }
+                ],
+                "rawParsed": {
+                    "poNumber": "CI4PO05788",
+                    "poDate": "2026-03-17",
+                    "vendorName": "M/s AFP",
+                    "items": [
+                        {
+                            "itemCode": "11423",
+                            "description": "Cheesy Spicy Veg Momos 24.0 Pieces",
+                            "quantity": 50
+                        },
+                        {
+                            "itemCode": "11797",
+                            "description": "Meatigo Hot Wings 250.0 g",
+                            "quantity": 75
+                        },
+                        {
+                            "itemCode": "18003",
+                            "description": "Meatigo Chicken Curry Cut Skinless Frozen 450.0 g",
+                            "quantity": 120
+                        },
+                        {
+                            "itemCode": "18004",
+                            "description": "Meatigo Chicken Boneless Breast Frozen 450.0 g",
+                            "quantity": 540
+                        },
+                        {
+                            "itemCode": "205950",
+                            "description": "Frozen Pork Pepperoni Salami 100.0 g",
+                            "quantity": 40
+                        },
+                        {
+                            "itemCode": "253430",
+                            "description": "Pork Salami 200.0 g",
+                            "quantity": 75
+                        },
+                        {
+                            "itemCode": "33387",
+                            "description": "Frozen Chicken Chilli Salami 200.0 g",
+                            "quantity": 75
+                        },
+                        {
+                            "itemCode": "33390",
+                            "description": "Chicken Seekh Kebab 500.0 g",
+                            "quantity": 272
+                        },
+                        {
+                            "itemCode": "398656",
+                            "description": "Meatigo Chicken Drumsticks 450.0 g",
+                            "quantity": 270
+                        },
+                        {
+                            "itemCode": "414867",
+                            "description": "Chinese Veg Spring Rolls 240.0 g",
+                            "quantity": 25
+                        },
+                        {
+                            "itemCode": "432518",
+                            "description": "Meatigo Chicken Kheema 450.0 g",
+                            "quantity": 360
+                        },
+                        {
+                            "itemCode": "4459",
+                            "description": "Original Chicken Momos 24.0 Pieces",
+                            "quantity": 475
+                        }
+                    ]
+                },
+                "file": {
+                    "filePath": "/Users/bhuvan/three-way-match/backend/uploads/1785400248774-771063284.pdf",
+                    "originalName": "PO (1).pdf",
+                    "mimeType": "application/pdf"
+                },
+                "createdAt": "2026-07-30T08:30:48.776Z",
+                "updatedAt": "2026-07-30T08:30:48.776Z",
+                "__v": 0
+            }
+        ],
+        "grns": [
+            {
+                "_id": "6a6b0bb8b366e774879c6d20",
+                "grnNumber": "CI4000020234",
+                "poNumber": "CI4PO05788",
+                "grnDate": "2026-03-24T00:00:00.000Z",
+                "items": [
+                    {
+                        "itemCode": "11423",
+                        "description": "Cheesy Spicy Veg Momos 24.0 Pieces",
+                        "receivedQuantity": 50,
+                        "mrp": 305,
+                        "skuMaster": "6a6b0bac0ee4a5284b29e0e1",
+                        "unmappedReason": null
+                    },
+                    {
+                        "itemCode": "11797",
+                        "description": "Meatigo Hot Wings 250.0 g",
+                        "receivedQuantity": 75,
+                        "mrp": 175,
+                        "skuMaster": "6a6b0bac0ee4a5284b29e0e2",
+                        "unmappedReason": null
+                    },
+                    {
+                        "itemCode": "18003",
+                        "description": "Meatigo Chicken Curry Cut Skinless Frozen 450.0 g",
+                        "receivedQuantity": 30,
+                        "mrp": 195,
+                        "skuMaster": "6a6b0bac0ee4a5284b29e0e3",
+                        "unmappedReason": null
+                    },
+                    {
+                        "itemCode": "18004",
+                        "description": "Meatigo Chicken Boneless Breast Frozen 450.0 g",
+                        "receivedQuantity": 30,
+                        "mrp": 275,
+                        "skuMaster": "6a6b0bac0ee4a5284b29e0e4",
+                        "unmappedReason": null
+                    },
+                    {
+                        "itemCode": "205950",
+                        "description": "Frozen Pork Pepperoni Salami 100.0 g",
+                        "receivedQuantity": 40,
+                        "mrp": 185,
+                        "skuMaster": "6a6b0bac0ee4a5284b29e0e5",
+                        "unmappedReason": null
+                    },
+                    {
+                        "itemCode": "253430",
+                        "description": "Pork Salami 200.0 g",
+                        "receivedQuantity": 75,
+                        "mrp": 260,
+                        "skuMaster": "6a6b0bac0ee4a5284b29e0e6",
+                        "unmappedReason": null
+                    },
+                    {
+                        "itemCode": "33387",
+                        "description": "Frozen Chicken Chilli Salami 200.0 g",
+                        "receivedQuantity": 75,
+                        "mrp": 175,
+                        "skuMaster": null,
+                        "unmappedReason": "unmapped_master_sku"
+                    },
+                    {
+                        "itemCode": "33390",
+                        "description": "Chicken Seekh Kebab 500.0 g",
+                        "receivedQuantity": 272,
+                        "mrp": 315,
+                        "skuMaster": "6a6b0bac0ee4a5284b29e0e7",
+                        "unmappedReason": null
+                    },
+                    {
+                        "itemCode": "398656",
+                        "description": "Meatigo Chicken Drumsticks 450.0 g",
+                        "receivedQuantity": 270,
+                        "mrp": 260,
+                        "skuMaster": "6a6b0bac0ee4a5284b29e0e8",
+                        "unmappedReason": null
+                    },
+                    {
+                        "itemCode": "414867",
+                        "description": "Chinese Veg Spring Rolls 240.0 g",
+                        "receivedQuantity": 25,
+                        "mrp": 165,
+                        "skuMaster": "6a6b0bac0ee4a5284b29e0e9",
+                        "unmappedReason": null
+                    },
+                    {
+                        "itemCode": "GRN-EXTRA-001",
+                        "description": "Unbudgeted Sample Pack (not on PO)",
+                        "receivedQuantity": 5,
+                        "mrp": 50,
+                        "skuMaster": null,
+                        "unmappedReason": "unmapped_master_sku"
+                    }
+                ],
+                "rawParsed": {
+                    "grnNumber": "CI4000020234",
+                    "poNumber": "CI4PO05788",
+                    "grnDate": "2026-03-24",
+                    "items": [
+                        {
+                            "itemCode": "11423",
+                            "description": "Cheesy Spicy Veg Momos 24.0 Pieces",
+                            "receivedQuantity": 50,
+                            "mrp": 305
+                        },
+                        {
+                            "itemCode": "11797",
+                            "description": "Meatigo Hot Wings 250.0 g",
+                            "receivedQuantity": 75,
+                            "mrp": 175
+                        },
+                        {
+                            "itemCode": "18003",
+                            "description": "Meatigo Chicken Curry Cut Skinless Frozen 450.0 g",
+                            "receivedQuantity": 30,
+                            "mrp": 195
+                        },
+                        {
+                            "itemCode": "18004",
+                            "description": "Meatigo Chicken Boneless Breast Frozen 450.0 g",
+                            "receivedQuantity": 30,
+                            "mrp": 275
+                        },
+                        {
+                            "itemCode": "205950",
+                            "description": "Frozen Pork Pepperoni Salami 100.0 g",
+                            "receivedQuantity": 40,
+                            "mrp": 185
+                        },
+                        {
+                            "itemCode": "253430",
+                            "description": "Pork Salami 200.0 g",
+                            "receivedQuantity": 75,
+                            "mrp": 260
+                        },
+                        {
+                            "itemCode": "33387",
+                            "description": "Frozen Chicken Chilli Salami 200.0 g",
+                            "receivedQuantity": 75,
+                            "mrp": 175
+                        },
+                        {
+                            "itemCode": "33390",
+                            "description": "Chicken Seekh Kebab 500.0 g",
+                            "receivedQuantity": 272,
+                            "mrp": 315
+                        },
+                        {
+                            "itemCode": "398656",
+                            "description": "Meatigo Chicken Drumsticks 450.0 g",
+                            "receivedQuantity": 270,
+                            "mrp": 260
+                        },
+                        {
+                            "itemCode": "414867",
+                            "description": "Chinese Veg Spring Rolls 240.0 g",
+                            "receivedQuantity": 25,
+                            "mrp": 165
+                        },
+                        {
+                            "itemCode": "GRN-EXTRA-001",
+                            "description": "Unbudgeted Sample Pack (not on PO)",
+                            "receivedQuantity": 5,
+                            "mrp": 50
+                        }
+                    ]
+                },
+                "file": {
+                    "filePath": "/Users/bhuvan/three-way-match/backend/uploads/1785400248807-405085789.pdf",
+                    "originalName": "GRN (1).pdf",
+                    "mimeType": "application/pdf"
+                },
+                "createdAt": "2026-07-30T08:30:48.808Z",
+                "updatedAt": "2026-07-30T08:30:48.808Z",
+                "__v": 0
+            }
+        ],
+        "invoices": [
+            {
+                "_id": "6a6b0bb8b366e774879c6d1c",
+                "invoiceNumber": "IN25MH2504251",
+                "poNumber": "CI4PO05788",
+                "invoiceDate": "2026-03-24T00:00:00.000Z",
+                "items": [
+                    {
+                        "itemCode": "FG-P-F-0503",
+                        "description": "PSM Cheesy Spicy Vegetable Momos 24Pcs",
+                        "quantity": 50,
+                        "unitRate": 220.76,
+                        "mrp": 305,
+                        "skuMaster": "6a6b0bac0ee4a5284b29e0e1",
+                        "unmappedReason": null
+                    },
+                    {
+                        "itemCode": "FG-M-F-1703",
+                        "description": "Meatigo RTC Meatigo Hot Wings 250g",
+                        "quantity": 75,
+                        "unitRate": 126.67,
+                        "mrp": 175,
+                        "skuMaster": "6a6b0bac0ee4a5284b29e0e2",
+                        "unmappedReason": null
+                    },
+                    {
+                        "itemCode": "FG-M-F-0620",
+                        "description": "Meatigo Chicken Curry Cuts 450g (5%)",
+                        "quantity": 30,
+                        "unitRate": 141.14,
+                        "mrp": 195,
+                        "skuMaster": "6a6b0bac0ee4a5284b29e0e3",
+                        "unmappedReason": null
+                    },
+                    {
+                        "itemCode": "FG-M-F-0619",
+                        "description": "Meatigo Chicken Boneless Breast 450g (5%)",
+                        "quantity": 30,
+                        "unitRate": 199.05,
+                        "mrp": 275,
+                        "skuMaster": "6a6b0bac0ee4a5284b29e0e4",
+                        "unmappedReason": null
+                    },
+                    {
+                        "itemCode": "FG-P-F-0237",
+                        "description": "PSM Frozen Pork Pepperoni Salami 100g",
+                        "quantity": 40,
+                        "unitRate": 133.9,
+                        "mrp": 185,
+                        "skuMaster": "6a6b0bac0ee4a5284b29e0e5",
+                        "unmappedReason": null
+                    },
+                    {
+                        "itemCode": "FG-P-F-0249",
+                        "description": "PSM Pork Plain Salami 200g",
+                        "quantity": 75,
+                        "unitRate": 188.19,
+                        "mrp": 260,
+                        "skuMaster": "6a6b0bac0ee4a5284b29e0e6",
+                        "unmappedReason": null
+                    },
+                    {
+                        "itemCode": "FG-P-F-0234",
+                        "description": "PSM Frozen Chicken Chilli Salami 200g",
+                        "quantity": 75,
+                        "unitRate": 126.67,
+                        "mrp": 175,
+                        "skuMaster": null,
+                        "unmappedReason": "unmapped_master_sku"
+                    },
+                    {
+                        "itemCode": "FG-P-F-0413",
+                        "description": "PSM Frozen Chicken Seekh Kabab 500g",
+                        "quantity": 272,
+                        "unitRate": 228,
+                        "mrp": 315,
+                        "skuMaster": "6a6b0bac0ee4a5284b29e0e7",
+                        "unmappedReason": null
+                    },
+                    {
+                        "itemCode": "FG-M-F-0602",
+                        "description": "Meatigo Chicken Drumsticks 450g (5%)",
+                        "quantity": 270,
+                        "unitRate": 188.19,
+                        "mrp": 260,
+                        "skuMaster": "6a6b0bac0ee4a5284b29e0e8",
+                        "unmappedReason": null
+                    },
+                    {
+                        "itemCode": "FG-P-F-1707",
+                        "description": "PSM Spring Roll - Chinese Veg 240g",
+                        "quantity": 25,
+                        "unitRate": 119.43,
+                        "mrp": 165,
+                        "skuMaster": "6a6b0bac0ee4a5284b29e0e9",
+                        "unmappedReason": null
+                    }
+                ],
+                "rawParsed": {
+                    "invoiceNumber": "IN25MH2504251",
+                    "poNumber": "CI4PO05788",
+                    "invoiceDate": "2026-03-24",
+                    "items": [
+                        {
+                            "itemCode": "FG-P-F-0503",
+                            "description": "PSM Cheesy Spicy Vegetable Momos 24Pcs",
+                            "quantity": 50,
+                            "unitRate": 220.76,
+                            "mrp": 305
+                        },
+                        {
+                            "itemCode": "FG-M-F-1703",
+                            "description": "Meatigo RTC Meatigo Hot Wings 250g",
+                            "quantity": 75,
+                            "unitRate": 126.67,
+                            "mrp": 175
+                        },
+                        {
+                            "itemCode": "FG-M-F-0620",
+                            "description": "Meatigo Chicken Curry Cuts 450g (5%)",
+                            "quantity": 30,
+                            "unitRate": 141.14,
+                            "mrp": 195
+                        },
+                        {
+                            "itemCode": "FG-M-F-0619",
+                            "description": "Meatigo Chicken Boneless Breast 450g (5%)",
+                            "quantity": 30,
+                            "unitRate": 199.05,
+                            "mrp": 275
+                        },
+                        {
+                            "itemCode": "FG-P-F-0237",
+                            "description": "PSM Frozen Pork Pepperoni Salami 100g",
+                            "quantity": 40,
+                            "unitRate": 133.9,
+                            "mrp": 185
+                        },
+                        {
+                            "itemCode": "FG-P-F-0249",
+                            "description": "PSM Pork Plain Salami 200g",
+                            "quantity": 75,
+                            "unitRate": 188.19,
+                            "mrp": 260
+                        },
+                        {
+                            "itemCode": "FG-P-F-0234",
+                            "description": "PSM Frozen Chicken Chilli Salami 200g",
+                            "quantity": 75,
+                            "unitRate": 126.67,
+                            "mrp": 175
+                        },
+                        {
+                            "itemCode": "FG-P-F-0413",
+                            "description": "PSM Frozen Chicken Seekh Kabab 500g",
+                            "quantity": 272,
+                            "unitRate": 228,
+                            "mrp": 315
+                        },
+                        {
+                            "itemCode": "FG-M-F-0602",
+                            "description": "Meatigo Chicken Drumsticks 450g (5%)",
+                            "quantity": 270,
+                            "unitRate": 188.19,
+                            "mrp": 260
+                        },
+                        {
+                            "itemCode": "FG-P-F-1707",
+                            "description": "PSM Spring Roll - Chinese Veg 240g",
+                            "quantity": 25,
+                            "unitRate": 119.43,
+                            "mrp": 165
+                        }
+                    ]
+                },
+                "file": {
+                    "filePath": "/Users/bhuvan/three-way-match/backend/uploads/1785400248721-282611388.pdf",
+                    "originalName": "Invoice (1).pdf",
+                    "mimeType": "application/pdf"
+                },
+                "createdAt": "2026-07-30T08:30:48.724Z",
+                "updatedAt": "2026-07-30T08:30:48.724Z",
+                "__v": 0
+            }
+        ]
+    }
+}

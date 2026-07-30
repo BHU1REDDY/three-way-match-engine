@@ -1,0 +1,165 @@
+{
+  "info": {
+    "name": "Three-Way Match Engine",
+    "description": "PO / GRN / Invoice three-way match API. Set the collection variable `token` after calling Login, or rely on the pre-request script in each protected request if you wire one up manually.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:4000" },
+    { "key": "token", "value": "" },
+    { "key": "poNumber", "value": "CI4PO05788" }
+  ],
+  "item": [
+    {
+      "name": "Auth",
+      "item": [
+        {
+          "name": "Login",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Content-Type", "value": "application/json" }],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"admin\",\n  \"password\": \"admin123\"\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/auth/login", "host": ["{{baseUrl}}"], "path": ["auth", "login"] }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Documents",
+      "item": [
+        {
+          "name": "Upload Document",
+          "request": {
+            "method": "POST",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "body": {
+              "mode": "formdata",
+              "formdata": [
+                { "key": "documentType", "value": "po", "type": "text" },
+                { "key": "file", "type": "file", "src": [] }
+              ]
+            },
+            "url": { "raw": "{{baseUrl}}/documents/upload", "host": ["{{baseUrl}}"], "path": ["documents", "upload"] }
+          }
+        },
+        {
+          "name": "List Documents",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": {
+              "raw": "{{baseUrl}}/documents?poNumber={{poNumber}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["documents"],
+              "query": [{ "key": "poNumber", "value": "{{poNumber}}" }]
+            }
+          }
+        },
+        {
+          "name": "Get Document by Id",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "{{baseUrl}}/documents/:id", "host": ["{{baseUrl}}"], "path": ["documents", ":id"] }
+          }
+        },
+        {
+          "name": "Get Document File",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": {
+              "raw": "{{baseUrl}}/documents/:id/file",
+              "host": ["{{baseUrl}}"],
+              "path": ["documents", ":id", "file"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Match & Summary",
+      "item": [
+        {
+          "name": "Get Match",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "{{baseUrl}}/match/{{poNumber}}", "host": ["{{baseUrl}}"], "path": ["match", "{{poNumber}}"] }
+          }
+        },
+        {
+          "name": "Get Summary",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": {
+              "raw": "{{baseUrl}}/summary/{{poNumber}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["summary", "{{poNumber}}"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "SKU Master",
+      "item": [
+        {
+          "name": "List SKU Masters",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "{{baseUrl}}/masters/sku", "host": ["{{baseUrl}}"], "path": ["masters", "sku"] }
+          }
+        },
+        {
+          "name": "Create SKU Master",
+          "request": {
+            "method": "POST",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"skuErpCode\": \"11423\",\n  \"name\": \"Cheesy Spicy Veg Momos 24 Pieces\",\n  \"eanCode\": \"FG-P-F-0503\",\n  \"hsnCode\": \"19022010\",\n  \"uom\": \"PKT\",\n  \"agreedRate\": 220.76,\n  \"mrp\": 305,\n  \"priceTolerance\": 0.05\n}"
+            },
+            "url": { "raw": "{{baseUrl}}/masters/sku", "host": ["{{baseUrl}}"], "path": ["masters", "sku"] }
+          }
+        },
+        {
+          "name": "Get SKU Master by Id",
+          "request": {
+            "method": "GET",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "{{baseUrl}}/masters/sku/:id", "host": ["{{baseUrl}}"], "path": ["masters", "sku", ":id"] }
+          }
+        },
+        {
+          "name": "Update SKU Master",
+          "request": {
+            "method": "PATCH",
+            "header": [
+              { "key": "Authorization", "value": "Bearer {{token}}" },
+              { "key": "Content-Type", "value": "application/json" }
+            ],
+            "body": { "mode": "raw", "raw": "{\n  \"agreedRate\": 225\n}" },
+            "url": { "raw": "{{baseUrl}}/masters/sku/:id", "host": ["{{baseUrl}}"], "path": ["masters", "sku", ":id"] }
+          }
+        },
+        {
+          "name": "Delete SKU Master",
+          "request": {
+            "method": "DELETE",
+            "header": [{ "key": "Authorization", "value": "Bearer {{token}}" }],
+            "url": { "raw": "{{baseUrl}}/masters/sku/:id", "host": ["{{baseUrl}}"], "path": ["masters", "sku", ":id"] }
+          }
+        }
+      ]
+    }
+  ]
+}
