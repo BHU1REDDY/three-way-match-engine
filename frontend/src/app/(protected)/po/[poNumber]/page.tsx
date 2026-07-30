@@ -117,7 +117,10 @@ export default function PoWorkspacePage() {
               />
             </div>
             <FilePreview documentId={primaryPo._id} />
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-2 mt-2 border-t border-gray-200 pt-5">
+              <h2 className="mb-3 text-sm font-semibold text-gray-700">
+                Line Items <span className="font-normal text-gray-400">({match.items.length})</span>
+              </h2>
               <ItemGrid items={match.items} />
             </div>
           </div>
@@ -143,7 +146,10 @@ export default function PoWorkspacePage() {
               />
             </div>
             <FilePreview documentId={activeInvoice._id} />
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-2 mt-2 border-t border-gray-200 pt-5">
+              <h2 className="mb-3 text-sm font-semibold text-gray-700">
+                Line Items <span className="font-normal text-gray-400">({activeInvoice.items.length})</span>
+              </h2>
               <DocumentItemsTable
                 qtyLabel="Qty"
                 rows={activeInvoice.items.map((it) => ({
@@ -179,7 +185,10 @@ export default function PoWorkspacePage() {
               />
             </div>
             <FilePreview documentId={activeGrn._id} />
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-2 mt-2 border-t border-gray-200 pt-5">
+              <h2 className="mb-3 text-sm font-semibold text-gray-700">
+                Line Items <span className="font-normal text-gray-400">({activeGrn.items.length})</span>
+              </h2>
               <DocumentItemsTable
                 qtyLabel="Received Qty"
                 rows={activeGrn.items.map((it) => ({
