@@ -4,7 +4,25 @@ import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useDocuments } from '@/lib/queries';
 import { UploadModal } from '@/components/upload/UploadModal';
+import { Button } from '@/components/ui/Button';
 import type { PurchaseOrderDoc } from '@/types/api';
+
+function PlusIcon() {
+  return (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.25" strokeLinecap="round">
+      <path d="M12 5v14M5 12h14" />
+    </svg>
+  );
+}
+
+function InboxIcon() {
+  return (
+    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="m22 12-6.5 0-1.5 3h-4l-1.5-3H2" />
+      <path d="M5.45 5.11 2 12v6a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-6l-3.45-6.89A2 2 0 0 0 16.76 4H7.24a2 2 0 0 0-1.79 1.11Z" />
+    </svg>
+  );
+}
 
 export default function HomePage() {
   const router = useRouter();
@@ -15,26 +33,33 @@ export default function HomePage() {
   const uniqueByPoNumber = Array.from(new Map(pos.map((p) => [p.poNumber, p])).values());
 
   return (
-    <div className="mx-auto max-w-4xl p-6">
-      <div className="mb-6 flex items-center justify-between">
+    <div className="mx-auto max-w-4xl px-6 py-8">
+      <div className="mb-8 flex items-center justify-between">
         <div>
-          <h1 className="text-xl font-semibold text-gray-900">Purchase Orders</h1>
-          <p className="text-sm text-gray-500">Upload a PO, GRN, or Invoice to begin matching.</p>
+          <h1 className="text-2xl font-semibold tracking-tight text-gray-900">Purchase Orders</h1>
+          <p className="mt-1 text-sm text-gray-500">Upload a PO, GRN, or Invoice to begin matching.</p>
         </div>
-        <button
-          onClick={() => setUploadOpen(true)}
-          className="rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
-        >
+        <Button icon={<PlusIcon />} onClick={() => setUploadOpen(true)}>
           Upload Document
-        </button>
+        </Button>
       </div>
 
-      {isLoading && <p className="text-sm text-gray-400">Loading…</p>}
+      {isLoading && (
+        <div className="flex items-center justify-center py-16 text-sm text-gray-400">Loading…</div>
+      )}
 
       {!isLoading && uniqueByPoNumber.length === 0 && (
-        <div className="rounded-lg border border-dashed border-gray-300 p-8 text-center text-sm text-gray-400">
-          No documents uploaded yet. Upload a PO, GRN, or Invoice to get started - order doesn&apos;t
-          matter.
+        <div className="flex flex-col items-center rounded-2xl border border-dashed border-gray-300 bg-white/60 px-8 py-14 text-center">
+          <div className="mb-3 flex h-14 w-14 items-center justify-center rounded-full bg-indigo-50 text-indigo-500">
+            <InboxIcon />
+          </div>
+          <p className="text-sm font-medium text-gray-700">No documents yet</p>
+          <p className="mt-1 max-w-sm text-sm text-gray-400">
+            Upload a PO, GRN, or Invoice to get started - upload order doesn&apos;t matter.
+          </p>
+          <Button icon={<PlusIcon />} onClick={() => setUploadOpen(true)} className="mt-5">
+            Upload Document
+          </Button>
         </div>
       )}
 
@@ -43,13 +68,31 @@ export default function HomePage() {
           <button
             key={po.poNumber}
             onClick={() => router.push(`/po/${encodeURIComponent(po.poNumber)}`)}
-            className="flex items-center justify-between rounded-lg border border-gray-200 bg-white p-4 text-left shadow-sm hover:border-blue-300"
+            className="group flex items-center justify-between rounded-xl border border-gray-200 bg-white p-4 text-left shadow-sm transition-all hover:-translate-y-0.5 hover:border-indigo-300 hover:shadow-md"
           >
-            <div>
-              <p className="font-mono text-sm font-medium text-gray-900">{po.poNumber}</p>
-              <p className="text-xs text-gray-500">{po.vendorName}</p>
+            <div className="flex items-center gap-3">
+              <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-50 text-sm font-semibold text-indigo-600">
+                {po.vendorName?.[0]?.toUpperCase() || 'P'}
+              </div>
+              <div>
+                <p className="font-mono text-sm font-medium text-gray-900">{po.poNumber}</p>
+                <p className="text-xs text-gray-500">{po.vendorName}</p>
+              </div>
             </div>
-            <span className="text-xs text-gray-400">{new Date(po.poDate).toLocaleDateString()}</span>
+            <div className="flex items-center gap-3">
+              <span className="text-xs text-gray-400">{new Date(po.poDate).toLocaleDateString()}</span>
+              <svg
+                width="16"
+                height="16"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                className="text-gray-300 transition-transform group-hover:translate-x-0.5 group-hover:text-indigo-500"
+              >
+                <path d="m9 18 6-6-6-6" />
+              </svg>
+            </div>
           </button>
         ))}
       </div>

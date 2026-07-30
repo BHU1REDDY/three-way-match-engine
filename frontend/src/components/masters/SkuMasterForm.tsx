@@ -3,6 +3,7 @@
 import { useState, FormEvent, useEffect } from 'react';
 import type { SkuMaster } from '@/types/api';
 import { ApiClientError } from '@/lib/apiClient';
+import { Button } from '@/components/ui/Button';
 
 export interface SkuMasterFormValues {
   skuErpCode: string;
@@ -79,7 +80,10 @@ export function SkuMasterForm({
       : null;
 
   return (
-    <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-3 rounded-lg border border-gray-200 bg-white p-4">
+    <form
+      onSubmit={handleSubmit}
+      className="grid grid-cols-2 gap-4 rounded-xl border border-gray-200 bg-white p-5 shadow-sm"
+    >
       <Field label="ERP Code *" value={values.skuErpCode} onChange={(v) => set('skuErpCode', v)} />
       <Field label="Name *" value={values.name} onChange={(v) => set('name', v)} />
       <Field label="EAN Code" value={values.eanCode} onChange={(v) => set('eanCode', v)} />
@@ -94,23 +98,17 @@ export function SkuMasterForm({
         type="number"
       />
 
-      {errorMessage && <p className="col-span-2 text-sm text-red-600">{errorMessage}</p>}
+      {errorMessage && (
+        <p className="col-span-2 rounded-lg bg-red-50 px-3 py-2 text-sm text-red-600">{errorMessage}</p>
+      )}
 
       <div className="col-span-2 flex justify-end gap-2 pt-1">
-        <button
-          type="button"
-          onClick={onCancel}
-          className="rounded-md border border-gray-300 px-3 py-1.5 text-sm text-gray-700 hover:bg-gray-50"
-        >
+        <Button type="button" variant="secondary" onClick={onCancel}>
           Cancel
-        </button>
-        <button
-          type="submit"
-          disabled={submitting}
-          className="rounded-md bg-blue-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-blue-700 disabled:opacity-50"
-        >
+        </Button>
+        <Button type="submit" disabled={submitting}>
           {submitting ? 'Saving…' : submitLabel}
-        </button>
+        </Button>
       </div>
     </form>
   );
@@ -135,7 +133,7 @@ function Field({
         step="any"
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="w-full rounded-md border border-gray-300 px-2.5 py-1.5 text-sm focus:border-blue-500 focus:outline-none"
+        className="w-full rounded-lg border border-gray-300 px-2.5 py-1.5 text-sm transition-colors focus:border-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-100"
       />
     </div>
   );

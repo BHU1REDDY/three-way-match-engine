@@ -28,7 +28,7 @@ export function SubTabPills({
             onClick={() => onChange(item.id)}
             className={`rounded-full border px-3 py-1 text-xs font-medium transition-colors ${
               isActive
-                ? 'border-blue-600 bg-blue-600 text-white'
+                ? 'border-indigo-600 bg-indigo-600 text-white'
                 : 'border-gray-300 bg-white text-gray-600 hover:border-gray-400'
             }`}
           >

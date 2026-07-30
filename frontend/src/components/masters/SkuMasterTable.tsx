@@ -39,7 +39,7 @@ export function SkuMasterTable({
               <td className="px-3 py-2 text-right">{sku.mrp ?? '—'}</td>
               <td className="px-3 py-2 text-right">{sku.priceTolerance}</td>
               <td className="px-3 py-2 text-right">
-                <button onClick={() => onEdit(sku)} className="mr-2 text-xs text-blue-600 hover:underline">
+                <button onClick={() => onEdit(sku)} className="mr-2 text-xs text-indigo-600 hover:underline">
                   Edit
                 </button>
                 <button onClick={() => onDelete(sku)} className="text-xs text-red-600 hover:underline">

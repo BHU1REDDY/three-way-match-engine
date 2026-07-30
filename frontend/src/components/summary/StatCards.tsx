@@ -14,7 +14,7 @@ export function StatCards({
   totalReceived: number;
 }) {
   const cards = [
-    { label: 'PO Amount', value: poAmount, color: 'text-blue-600' },
+    { label: 'PO Amount', value: poAmount, color: 'text-indigo-600' },
     { label: 'Total Invoiced', value: totalInvoiced, color: 'text-purple-600' },
     { label: 'Total Received', value: totalReceived, color: 'text-emerald-600' },
   ];

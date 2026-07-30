@@ -38,7 +38,7 @@ export function TopTabs({
             onClick={() => onChange(tab.id)}
             className={`relative -mb-px flex items-center gap-1.5 border-b-2 px-3 py-3 text-sm font-medium transition-colors ${
               isActive
-                ? 'border-blue-600 text-blue-600'
+                ? 'border-indigo-600 text-indigo-600'
                 : 'border-transparent text-gray-500 hover:text-gray-800'
             }`}
           >
@@ -46,7 +46,7 @@ export function TopTabs({
             {tab.count !== undefined && (
               <span
                 className={`rounded-full px-1.5 py-0.5 text-xs ${
-                  isActive ? 'bg-blue-100 text-blue-700' : 'bg-gray-100 text-gray-500'
+                  isActive ? 'bg-indigo-100 text-indigo-700' : 'bg-gray-100 text-gray-500'
                 }`}
               >
                 {tab.count}

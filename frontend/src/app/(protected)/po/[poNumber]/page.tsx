@@ -14,6 +14,15 @@ import { DocumentItemsTable } from '@/components/document/DocumentItemsTable';
 import { StatCards } from '@/components/summary/StatCards';
 import { AssociatedTable } from '@/components/summary/AssociatedTable';
 import { UploadModal } from '@/components/upload/UploadModal';
+import { Button } from '@/components/ui/Button';
+
+function PlusIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+      <path d="M12 5v14M5 12h14" />
+    </svg>
+  );
+}
 
 export default function PoWorkspacePage() {
   const params = useParams<{ poNumber: string }>();
@@ -50,17 +59,14 @@ export default function PoWorkspacePage() {
 
   return (
     <div className="flex h-full flex-col">
-      <div className="flex items-center justify-between border-b border-gray-100 bg-white px-4 py-3">
+      <div className="flex items-center justify-between border-b border-gray-100 bg-white px-5 py-3.5">
         <div>
-          <h1 className="font-mono text-base font-semibold text-gray-900">{poNumber}</h1>
+          <h1 className="font-mono text-base font-semibold tracking-tight text-gray-900">{poNumber}</h1>
           {primaryPo && <p className="text-xs text-gray-500">{primaryPo.vendorName}</p>}
         </div>
-        <button
-          onClick={() => setUploadModalOpen(true)}
-          className="rounded-md bg-blue-600 px-3 py-1.5 text-xs font-medium text-white hover:bg-blue-700"
-        >
-          + Upload Document
-        </button>
+        <Button size="sm" icon={<PlusIcon />} onClick={() => setUploadModalOpen(true)}>
+          Upload Document
+        </Button>
       </div>
 
       <TopTabs
@@ -101,7 +107,7 @@ export default function PoWorkspacePage() {
               <MismatchBanner status={match.status} reasons={match.reasons} />
               <FormPanel
                 title="Purchase Order Details"
-                accentColor="border-l-blue-500"
+                accentColor="border-l-indigo-500"
                 fields={[
                   { label: 'PO Number', value: primaryPo.poNumber },
                   { label: 'PO Date', value: new Date(primaryPo.poDate).toLocaleDateString() },

@@ -9,7 +9,16 @@ import {
 } from '@/lib/queries';
 import { SkuMasterTable } from '@/components/masters/SkuMasterTable';
 import { SkuMasterForm } from '@/components/masters/SkuMasterForm';
+import { Button } from '@/components/ui/Button';
 import type { SkuMaster } from '@/types/api';
+
+function PlusIcon() {
+  return (
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+      <path d="M12 5v14M5 12h14" />
+    </svg>
+  );
+}
 
 export default function MastersPage() {
   const { data: skus, isLoading } = useSkuMasters();
@@ -31,24 +40,24 @@ export default function MastersPage() {
   }
 
   return (
-    <div className="mx-auto max-w-5xl p-6">
-      <div className="mb-6 flex items-center justify-between">
+    <div className="mx-auto max-w-5xl px-6 py-8">
+      <div className="mb-8 flex items-center justify-between">
         <div>
-          <h1 className="text-xl font-semibold text-gray-900">SKU Master</h1>
-          <p className="text-sm text-gray-500">
+          <h1 className="text-2xl font-semibold tracking-tight text-gray-900">SKU Master</h1>
+          <p className="mt-1 text-sm text-gray-500">
             The catalogue used to resolve PO/GRN/Invoice line items across documents.
           </p>
         </div>
         {!formOpen && (
-          <button
+          <Button
+            icon={<PlusIcon />}
             onClick={() => {
               setEditing(null);
               setFormOpen(true);
             }}
-            className="rounded-md bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700"
           >
-            + New SKU
-          </button>
+            New SKU
+          </Button>
         )}
       </div>
 

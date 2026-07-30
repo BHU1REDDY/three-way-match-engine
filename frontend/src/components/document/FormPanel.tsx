@@ -9,7 +9,7 @@ export interface FieldDef {
 
 export function FormPanel({
   title,
-  accentColor = 'border-l-blue-500',
+  accentColor = 'border-l-indigo-500',
   fields,
 }: {
   title: string;
