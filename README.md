@@ -227,6 +227,25 @@ Other notable pieces:
   in use just means the next `/match` recompute treats those items as unmapped again (which is
   arguably correct given the "always re-resolve live" design, but worth calling out).
 
+## Screenshots
+
+All captured against the real Gemini API run (`gemini-3.6-flash`), not the mock fixtures.
+
+**Purchase Order tab** — mismatch banner, form panel, file preview, item grid with highlighted mismatches
+![Purchase Order tab](docs/screenshots/01-purchase-order.jpg)
+
+**Fulfillment tab** — Invoice details + preview
+![Fulfillment tab](docs/screenshots/02-fulfillment.jpg)
+
+**Delivery tab** — GRN details + preview
+![Delivery tab](docs/screenshots/03-delivery.jpg)
+
+**Summary tab** — stat cards + Associated Invoice & GRN table
+![Summary tab](docs/screenshots/04-summary.jpg)
+
+**SKU Master** — list/create/edit/delete
+![SKU Master](docs/screenshots/05-sku-master.jpg)
+
 ## AI tools used
 
 Built with Claude Code (Anthropic), including reading the assignment PDF and sample documents,
