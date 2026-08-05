@@ -170,6 +170,31 @@ the same type/number combination:
 Both are hard violations (`mismatch` status) since a duplicate is a genuine data-integrity signal
 that needs a human to look at it, not something the engine should quietly resolve.
 
+## Testing
+
+```bash
+cd backend
+npm test
+```
+
+57 Jest tests across the service layer, run against an isolated in-memory MongoDB instance
+(`mongodb-memory-server`, pointed at the locally-installed `mongod` binary so it doesn't need to
+download its own - see `tests/testDb.js`) rather than mocks, so the actual Mongoose
+queries/aggregation are exercised, not a stand-in for them:
+
+- `tests/normalize.test.js`, `tests/validateExtracted.test.js` - pure functions, no DB.
+- `tests/masterResolution.test.js` - `skuErpCode`/`eanCode` resolution, trim/case-insensitivity,
+  unmapped fallback, and that a `SkuMaster` created after the fact resolves on the next lookup.
+- `tests/matchEngine.test.js` - the full status ladder, all 9 reason codes, multi-line
+  aggregation, divide-by-zero guards on zero/missing `agreedRate`/`mrp`, and that `computeMatch`
+  never returns a stale result across mutations.
+- `tests/summaryEngine.test.js` - stat card valuation, chronological cumulative rows, and that
+  `pendingDeliveryQty` never goes negative.
+
+Each test file gets its own in-memory `mongod` instance (`beforeAll`/`afterAll`) with collections
+cleared between tests (`afterEach`), so tests never leak state into each other or touch your real
+`three-way-match` database.
+
 ## Frontend architecture & state management
 
 Next.js App Router, all data-bearing screens are Client Components using **TanStack Query**
@@ -212,9 +237,9 @@ Other notable pieces:
 
 ## Known limitations / what I'd improve next
 
-- No automated test suite yet beyond manual end-to-end verification (upload out of order, duplicate
-  PO, live SKU-master creation, price/MRP mismatch, unresolved items) - `matchEngine.js` and
-  `masterResolution.js` are pure functions and would be the first things I'd add Jest unit tests for.
+- No route/HTTP-level integration tests yet (`documents.routes.js`, `masters.routes.js`, auth
+  middleware) - only the service layer is unit tested so far. Auth and multipart upload handling are
+  still only verified manually/via the Postman collection.
 - The Fulfillment/Delivery tabs' own item tables show each document's resolution state *as parsed at
   upload time* (a historical snapshot from `rawParsed`/stored `skuMaster`), while the PO tab's item
   grid and the Summary tab are always live-recomputed. This split is intentional (documented above)

@@ -25,6 +25,19 @@
   },
   "devDependencies": {
     "jest": "^30.4.2",
+    "mongodb-memory-server": "^11.2.0",
     "nodemon": "^3.1.14"
+  },
+  "allowScripts": {
+    "mongodb-memory-server@11.2.0": true,
+    "unrs-resolver@1.12.2": true,
+    "fsevents@2.3.3": true
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": [
+      "<rootDir>/tests/**/*.test.js"
+    ],
+    "testTimeout": 30000
   }
 }
