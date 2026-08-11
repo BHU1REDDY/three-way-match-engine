@@ -1,7 +1,9 @@
 'use client';
 
+import { useState } from 'react';
 import type { MatchStatus } from '@/types/api';
 import { Tooltip } from '@/components/ui/Tooltip';
+import { MatchRulesModal } from './MatchRulesModal';
 
 const REASON_LABELS: Record<string, string> = {
   grn_qty_exceeds_po_qty: 'Received Qty Exceeds PO Qty',
@@ -96,6 +98,7 @@ function StatusIcon({ status, className }: { status: MatchStatus; className?: st
 }
 
 export function MismatchBanner({ status, reasons }: { status: MatchStatus; reasons: string[] }) {
+  const [rulesOpen, setRulesOpen] = useState(false);
   if (status === 'matched') return null;
   const style = STATUS_STYLE[status];
 
@@ -106,8 +109,18 @@ export function MismatchBanner({ status, reasons }: { status: MatchStatus; reaso
           <StatusIcon status={status} />
         </div>
         <div className="min-w-0 flex-1">
-          <p className={`text-sm font-semibold ${style.text}`}>{style.label}</p>
-          <p className="mt-0.5 text-xs text-gray-500">{style.description}</p>
+          <div className="flex items-start justify-between gap-2">
+            <div>
+              <p className={`text-sm font-semibold ${style.text}`}>{style.label}</p>
+              <p className="mt-0.5 text-xs text-gray-500">{style.description}</p>
+            </div>
+            <button
+              onClick={() => setRulesOpen(true)}
+              className="shrink-0 whitespace-nowrap rounded-md px-2 py-1 text-xs font-medium text-gray-500 underline decoration-dotted underline-offset-2 transition-colors hover:bg-white/60 hover:text-gray-800"
+            >
+              What do these mean?
+            </button>
+          </div>
           {reasons.length > 0 && (
             <div className="mt-3 flex flex-wrap gap-1.5">
               {reasons.map((r) => (
@@ -121,6 +134,7 @@ export function MismatchBanner({ status, reasons }: { status: MatchStatus; reaso
           )}
         </div>
       </div>
+      <MatchRulesModal open={rulesOpen} onClose={() => setRulesOpen(false)} />
     </div>
   );
 }
