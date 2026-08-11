@@ -159,9 +159,15 @@ export default function PoWorkspacePage() {
               </div>
               <FilePreview documentId={primaryPo._id} />
               <div className="mt-2 border-t border-gray-200 pt-5 lg:col-span-2">
-                <h2 className="mb-3 text-sm font-semibold text-gray-700">
+                <h2 className="text-sm font-semibold text-gray-700">
                   Line Items <span className="font-normal text-gray-400">({match.items.length})</span>
                 </h2>
+                <p className="mb-3 mt-0.5 text-xs text-gray-400">
+                  Every item across the PO, GRN, and Invoice for this poNumber, merged into one
+                  comparison row per product. Rows with no PO Qty appeared on a GRN/Invoice but not
+                  on the PO itself; &quot;Unmapped&quot; rows couldn&apos;t be resolved to a SKU
+                  Master record.
+                </p>
                 <ItemGrid items={match.items} />
               </div>
             </div>
@@ -192,9 +198,13 @@ export default function PoWorkspacePage() {
               </div>
               <FilePreview documentId={activeInvoice._id} />
               <div className="mt-2 border-t border-gray-200 pt-5 lg:col-span-2">
-                <h2 className="mb-3 text-sm font-semibold text-gray-700">
+                <h2 className="text-sm font-semibold text-gray-700">
                   Line Items <span className="font-normal text-gray-400">({activeInvoice.items.length})</span>
                 </h2>
+                <p className="mb-3 mt-0.5 text-xs text-gray-400">
+                  The line items exactly as extracted from this invoice, with each one&apos;s SKU
+                  Master mapping status.
+                </p>
                 <DocumentItemsTable
                   qtyLabel="Qty"
                   rows={activeInvoice.items.map((it) => ({
@@ -235,9 +245,13 @@ export default function PoWorkspacePage() {
               </div>
               <FilePreview documentId={activeGrn._id} />
               <div className="mt-2 border-t border-gray-200 pt-5 lg:col-span-2">
-                <h2 className="mb-3 text-sm font-semibold text-gray-700">
+                <h2 className="text-sm font-semibold text-gray-700">
                   Line Items <span className="font-normal text-gray-400">({activeGrn.items.length})</span>
                 </h2>
+                <p className="mb-3 mt-0.5 text-xs text-gray-400">
+                  The line items exactly as extracted from this GRN, with each one&apos;s SKU
+                  Master mapping status.
+                </p>
                 <DocumentItemsTable
                   qtyLabel="Received Qty"
                   rows={activeGrn.items.map((it) => ({
