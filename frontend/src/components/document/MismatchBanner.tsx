@@ -1,6 +1,7 @@
 'use client';
 
 import type { MatchStatus } from '@/types/api';
+import { Tooltip } from '@/components/ui/Tooltip';
 
 const REASON_LABELS: Record<string, string> = {
   grn_qty_exceeds_po_qty: 'Received Qty Exceeds PO Qty',
@@ -13,6 +14,19 @@ const REASON_LABELS: Record<string, string> = {
   price_mismatch: 'Price Mismatch',
   mrp_mismatch: 'MRP Mismatch',
   unmapped_master_sku: 'Unmapped SKU',
+};
+
+const REASON_DESCRIPTIONS: Record<string, string> = {
+  grn_qty_exceeds_po_qty: 'More was received on a GRN than was ever ordered on the PO for at least one item.',
+  invoice_qty_exceeds_grn_qty: "The invoice bills for more than what's been received so far, for at least one item.",
+  invoice_qty_exceeds_po_qty: 'The invoice bills for more than was ordered on the PO, for at least one item.',
+  invoice_date_after_po_date: 'At least one invoice is dated after the PO date — unusual, worth double-checking.',
+  duplicate_po: 'A second PO was uploaded for this same PO number. Both are kept, not overwritten.',
+  duplicate_document: 'Two GRNs (or two Invoices) share the same document number under this PO.',
+  item_missing_in_po: "At least one item on a GRN/Invoice has no matching line on the PO itself — see the item grid's “Not on PO” tags below.",
+  price_mismatch: "An invoice's billed rate differs from the agreed SKU Master rate by more than the allowed tolerance.",
+  mrp_mismatch: 'An MRP on the invoice/GRN differs from the SKU Master catalogue MRP by more than ~1%.',
+  unmapped_master_sku: "At least one item's code couldn't be matched to any SKU Master record — see the amber rows below.",
 };
 
 const STATUS_STYLE: Record<
@@ -97,12 +111,11 @@ export function MismatchBanner({ status, reasons }: { status: MatchStatus; reaso
           {reasons.length > 0 && (
             <div className="mt-3 flex flex-wrap gap-1.5">
               {reasons.map((r) => (
-                <span
-                  key={r}
-                  className="rounded-full border border-gray-200 bg-white px-2.5 py-1 text-xs font-medium text-gray-700 shadow-sm"
-                >
-                  {REASON_LABELS[r] || r}
-                </span>
+                <Tooltip key={r} content={REASON_DESCRIPTIONS[r] ?? 'See the item grid below for details.'}>
+                  <span className="cursor-help rounded-full border border-gray-200 bg-white px-2.5 py-1 text-xs font-medium text-gray-700 shadow-sm">
+                    {REASON_LABELS[r] || r}
+                  </span>
+                </Tooltip>
               ))}
             </div>
           )}
